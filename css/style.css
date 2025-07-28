@@ -1,0 +1,26 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+:root {
+  --silk-ivory: #f3f0e8; 
+  --text: #d4af7a; 
+  --main-color: #333333; 
+  --pearl-gray: #c4c4c4; 
+  --noir: #161616;
+  --grain: #e5d9d1; 
+  --slate: #5a5a5a; 
+
+}
+
+.container {
+  max-width: 1120px;
+  margin-inline: 1.5rem;
+}
