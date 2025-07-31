@@ -33,7 +33,7 @@ a:hover {
   font-size: 24px;
   text-transform: uppercase;
   letter-spacing: 4px;
-  margin: 0px;
+  margin: 20px 0 0 0;
 }
 
 nav {
@@ -51,12 +51,16 @@ nav {
 .nav-list {
   list-style: none;
   display: flex;
+  font-family: Century;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-list li {
   letter-spacing: 2px;
-  margin: 20px  0 0 100px;
-  font-size: 25px;
+  margin: 20px  0 0 80px;
+  font-size: 30px;
 }
 
 .nav-overlay {
@@ -81,6 +85,35 @@ nav {
 .nav-list {
   z-index: 10; 
 }
+
+.nav-detail {
+  position: absolute;
+  bottom: 10%; 
+  left: 30%;
+  transform: translateX(-50%);
+  width: 100%;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.title {
+  font-size: 30px; 
+  color: var(--silk-ivory);
+  font-family: Bookman Old Style;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+}
+
+.subtitle {
+  font-family: Bebas Neue;
+  font-size: 60px;
+  color: var(--text);
+  letter-spacing: 1px;
+}
+
 
 .mobile-menu {
   display: none;
@@ -125,6 +158,26 @@ nav {
   .logo {
     margin-top: 20px;
   }
+  .nav-detail {
+      position: absolute;
+      bottom: 15%; 
+      left: 0;
+      right: 0;
+      transform: none;
+      padding: 0 20px;
+  }
+
+  .title, .subtitle {
+      font-size: 25px;
+      text-align: center;
+      margin: 5px 0;
+      line-height: 1.4;
+  }
+
+  .title {
+      font-size: 22px;
+      font-weight: 600;
+    }
 }
 
 .nav-list.active {
