@@ -44,8 +44,6 @@ const mobileNavbar = new MobileNavbar(
 );
 mobileNavbar.init();
 
-document.body.classList.toggle("no-scroll");
-
 document.body.classList.add('menu-open');
 
 document.body.classList.remove('menu-open');
