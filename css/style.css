@@ -42,11 +42,12 @@ a:hover {
 }
 
 
+/* HEAD  */
+
+
 section {
   min-height: 100vh;
 }
-
-
 
 nav {
   display: flex;
@@ -438,9 +439,36 @@ nav {
 .service-card {
   background: #fff;
   border-radius: 10px;
-  padding: 1.5rem;
+  padding-bottom: 1.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
+  height: 100%;
+}
+
+.service-content {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  height: 100%; 
+  padding: 0; 
+}
+
+.price-button-container {
+  margin-top: auto; 
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); 
+  margin-bottom: -0.5rem;
+}
+
+.service-description {
+  flex-grow: 1;
+  min-height: 60px; 
+}
+
+.service-card p {
+  flex: 1; 
+  margin-bottom: 0,.5rem; 
+  min-height: 4rem;
 }
 
 .service-card:hover {
@@ -454,20 +482,48 @@ nav {
   object-fit: cover;
 }
 
+.service-card h3 {
+  margin: 1rem 0 0.5rem 0; 
+  min-height: 3.5rem; 
+}
+
+
 .price {
   font-weight: bold;
   color: #ff6b6b;
   display: block;
   margin: 1rem 0;
+  margin-bottom: 0.5rem
 }
 
 .book-button {
-  background: #000;
-  color: #fff;
+  width: 90%;
+  padding: 0.8rem;
+  text-align: center;
+  background: var(--noir);
+  color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 30px;
   cursor: pointer;
+  align-self: center;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  margin-bottom: 0; 
+  top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .book-button {
+    padding: 0.8rem 1.5rem;
+  }
 }
 
 .about_us {
