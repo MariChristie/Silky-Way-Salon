@@ -37,6 +37,13 @@ a:hover {
   margin: 20px 0 0 0;
 }
 
+
+section {
+  min-height: 100vh;
+}
+
+
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -133,26 +140,46 @@ nav {
   transition: 0.3s;
 }
 
+.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
 @media (max-width: 999px) {
   body {
     overflow-x: hidden;
   }
   .nav-list {
-    position: absolute;
+    position: fixed;
     top: 8vh;
-    right: 0;
-    width: 50vw;
-    height: 92vh;
+    left: 0; 
+    width: 100vw; 
+    height: 100vh; 
     background: var(--main-color);
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     transform: translateX(100vw);
     transition: transform 0.3s ease-in;
+    padding-top: 20vh;
+  }
+    .logo, .mobile-menu {
+    position: relative;
+    z-index: 20; 
   }
   .nav-list li {
-    margin-left: 0;
-    opacity: 0;
+    margin: 15px 0 !important; 
+    padding: 12px 30px; 
+    width: 80%; 
+    text-align: center;
+    background: rgba(255,255,255,0.1); 
+    border-radius: 8px; 
+    transition: all 0.3s ease;
+  }
+    .nav-list li:hover {
+    background: rgba(255,255,255,0.2); 
+    transform: translateX(5px); 
   }
   .mobile-menu {
     display: block;
@@ -180,6 +207,12 @@ nav {
       font-size: 22px;
       font-weight: 600;
     }
+    
+  .nav-list li a {
+    display: block; 
+    width: 100%;
+    padding: 8px 0; 
+  }
 }
 
 .nav-list.active {
@@ -211,8 +244,10 @@ nav {
 }
 
 .no-scroll {
-  height: 100vh;
   overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 .container {
@@ -472,22 +507,39 @@ nav {
 @media (max-width: 768px) {
   .about_us {
     flex-direction: column;
-    text-align: center;
-    gap: 40px;
+    text-align: left; 
+    gap: 30px;
+    margin: 30px 20px; 
+    padding: 0 15px; 
   }
-  
+
   .about_img {
     width: 100%;
-    max-width: 400px;
+    max-width: 100%; 
+    height: auto;
+    max-height: 400px;
+    margin: 0 auto; 
   }
-  
+
+  .about_texto {
+    max-width: 100%; 
+    padding: 0; 
+    margin-left: 0; 
+  }
+
   .about_title {
-    font-size: 2rem;
+    font-size: 1.8rem; 
+    text-align: left; 
+    margin-bottom: 20px;
+    line-height: 1.3; 
   }
-  
+
   .about_text {
     font-size: 1rem;
-  }
+    line-height: 1.6;
+    text-align: left;
+    letter-spacing: normal; 
+    }
 }
 
 .gallery-section {
@@ -562,35 +614,60 @@ nav {
 }
 
 @media (max-width: 1200px) {
-  .gallery {
-      width: 800px;
-  }
-  .gallery div img {
-      width: 250px;
-      height: 250px;
+  .gallery img {
+    width: 250px;
+    height: 250px;
   }
 }
 
 @media (max-width: 900px) {
-  .gallery {
-      width: 600px;
-  }
   .gallery div {
-      grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .gallery img {
+    width: calc(50% - 20px); 
+    height: auto;
+    aspect-ratio: 1/1; 
+  }
+  
+  #backBtn, #nextBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--noir);
+    border-radius: 50%;
+    padding: 10px;
+    display: none;
+  }
+  
+  #backBtn {
+    left: 10px;
+  }
+  
+  #nextBtn {
+    right: 10px;
   }
 }
 
-@media (max-width: 700px) {
-  .gallery {
-      width: 400px;
+@media (max-width: 600px) {
+  .gallery img {
+    width: 100%; 
+    max-width: 350px;
   }
-  .gallery div {
-      grid-template-columns: 1fr;
+  
+  .gallery-section {
+    margin: 30px 0;
+    padding: 20px 10px;
   }
-  #backBtn, #nextBtn {
-      width: 40px;
-      height: 40px;
-      margin: 0 10px;
+  
+  .gallery-title {
+    font-size: 1.8rem;
+  }
+  
+  .gallery-subtitle {
+    font-size: 1rem;
   }
 }
 
@@ -602,7 +679,9 @@ nav {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url(/img/contact_us.png);
+  background: 
+  linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url(/img/contact_us.png) center/cover;
   background-position: center;
   background-size: cover;
 }
@@ -613,7 +692,8 @@ nav {
 }
 
 .contact .content h2 {
-  font-size: 36px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 40px;
   font-weight: 500;
   color: #fff;
 }
@@ -664,7 +744,7 @@ nav {
 
 .containerInfo .contactInfo .box .text h3 {
   font-weight: 500px;
-  color: var(--noir);
+  color: var(--text);
 }
 
 .contactForm {
@@ -719,7 +799,7 @@ nav {
 
 .contactForm .inputBox input[type="submit" ] {
   width: 100px;
-  background: #00bcd4;
+  background: var(--noir);
   color: #fff;
   border: none;
   cursor: pointer;
